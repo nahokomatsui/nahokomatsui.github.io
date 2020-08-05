@@ -1,26 +1,36 @@
 <template>
   <div class="container">
-    <div>
-      <Logo />
+    <div class="content">
       <h1 class="title">
-        nahokomatsui.github.io
+        <img src="/logo.svg" alt="nahokomatsui" />
       </h1>
-      <div class="links">
+      <p class="description">
+        Web developer / kulala Inc.
+      </p>
+      <div class="sns">
         <a
-          href="https://nuxtjs.org/"
+          class="sns-link twitter"
+          href="https://twitter.com/nahokomatsui"
           target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
         >
-          Documentation
+          <fa class="sns-icon" :icon="['fab', 'twitter']" area-hidden="true" />
+          nahokomatsui
         </a>
         <a
-          href="https://github.com/nuxt/nuxt.js"
+          class="sns-link facebook"
+          href="https://www.facebook.com/nahoko.matsui/"
           target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
         >
-          GitHub
+          <fa class="sns-icon" :icon="['fab', 'facebook']" area-hidden="true" />
+          Nahoko Matsui
+        </a>
+        <a
+          class="sns-link connpass"
+          href="https://connpass.com/user/NahokoMatsui/"
+          target="_blank"
+        >
+          <fa class="sns-icon" icon="compass" area-hidden="true" />
+          NahokoMatsui
         </a>
       </div>
     </div>
@@ -35,33 +45,86 @@ export default Vue.extend({})
 
 <style>
 .container {
-  margin: 0 auto;
+  background-color: #f6f5f6;
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  background-color: #fff;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+  max-width: 600px;
+  padding: 60px 20px;
+}
+
+@media (min-width: 768px) {
+  .content {
+    min-height: 100vh;
+  }
 }
 
 .title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
+  max-width: 280px;
+  margin: 0 auto;
 }
 
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
+.title > img {
+  width: 100%;
 }
 
-.links {
-  padding-top: 15px;
+.description {
+  margin: 20px 0;
+  font-size: 0.9em;
+  letter-spacing: 0.1em;
+}
+
+.sns {
+  display: inline-flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+
+.sns-link {
+  padding: 0.5rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  transition: filter 0.2s;
+  border-radius: 4px;
+}
+
+.sns-link:hover {
+  filter: contrast(140%) brightness(80%);
+}
+
+.sns-link + .sns-link {
+  margin-top: 0.5rem;
+}
+
+.sns-link.facebook {
+  color: #3f6f9b;
+}
+
+.sns-link.twitter {
+  color: #36b0c0;
+}
+
+.sns-link.connpass {
+  color: #b97591;
+}
+
+.sns-icon {
+  font-size: 2rem;
+  margin-right: 0.5rem;
 }
 </style>

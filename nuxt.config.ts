@@ -1,4 +1,9 @@
-export default {
+import { Configuration } from '@nuxt/types'
+
+const title = 'nahokomatsui'
+const description = 'Web developer / kulala Inc.'
+
+const configuration: Configuration = {
   /*
    ** Nuxt rendering mode
    ** See https://nuxtjs.org/api/configuration-mode
@@ -14,14 +19,39 @@ export default {
    ** See https://nuxtjs.org/api/configuration-head
    */
   head: {
-    title: process.env.npm_package_name || '',
+    title,
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || '',
+        content: description,
+      },
+      {
+        hid: 'og:title',
+        property: 'og:title',
+        content: title,
+      },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content: description,
+      },
+      {
+        hid: 'og:url',
+        property: 'og:url',
+        content: 'https://nahokomatsui.github.io',
+      },
+      {
+        hid: 'twitter:card',
+        name: 'twitter:card',
+        content: 'summary_large_image',
+      },
+      {
+        hid: 'og:image',
+        name: 'og:image',
+        content: 'https://nahokomatsui.github.io/ogp.jpg',
       },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
@@ -29,12 +59,12 @@ export default {
   /*
    ** Global CSS
    */
-  css: [],
+  css: ['@fortawesome/fontawesome-svg-core/styles.css'],
   /*
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
    */
-  plugins: [],
+  plugins: ['@/plugins/fontawesome'],
   /*
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components
@@ -54,3 +84,5 @@ export default {
    */
   build: {},
 }
+
+export default configuration
