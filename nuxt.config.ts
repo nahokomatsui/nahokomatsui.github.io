@@ -51,7 +51,7 @@ const configuration: Configuration = {
       {
         hid: 'og:image',
         name: 'og:image',
-        content: 'https://nahokomatsui.github.io/ogp.jpg',
+        content: 'https://nahokomatsui.github.io/ogp.png',
       },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
