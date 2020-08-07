@@ -16,6 +16,7 @@ html {
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
   color: #44345b;
+  background-color: #f6f5f6;
 }
 
 *,

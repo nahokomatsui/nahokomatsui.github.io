@@ -1,6 +1,6 @@
 <template>
   <div class="container" :style="{ 'min-height': `${containerHeight}px` }">
-    <div class="content">
+    <div v-if="mounted" class="content">
       <h1 class="title">
         <img src="/logo.png" alt="nahokomatsui" width="280" height="73" />
       </h1>
@@ -14,7 +14,6 @@
           target="_blank"
         >
           <fa class="sns-icon" :icon="['fab', 'twitter']" area-hidden="true" />
-          nahokomatsui
         </a>
         <a
           class="sns-link facebook"
@@ -22,7 +21,6 @@
           target="_blank"
         >
           <fa class="sns-icon" :icon="['fab', 'facebook']" area-hidden="true" />
-          Nahoko Matsui
         </a>
         <a
           class="sns-link connpass"
@@ -30,7 +28,6 @@
           target="_blank"
         >
           <fa class="sns-icon" icon="compass" area-hidden="true" />
-          NahokoMatsui
         </a>
       </div>
     </div>
@@ -43,10 +40,12 @@ import Vue from 'vue'
 export default Vue.extend({
   data() {
     return {
+      mounted: false,
       containerHeight: 0,
     }
   },
   mounted() {
+    this.mounted = true
     this.containerHeight = window.innerHeight
   },
 })
@@ -54,7 +53,6 @@ export default Vue.extend({
 
 <style>
 .container {
-  background-color: #f6f5f6;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -92,7 +90,7 @@ export default Vue.extend({
 
 .sns {
   display: inline-flex;
-  flex-direction: column;
+  align-items: center;
   margin-top: 2rem;
 }
 
@@ -110,10 +108,6 @@ export default Vue.extend({
   filter: contrast(140%) brightness(80%);
 }
 
-.sns-link + .sns-link {
-  margin-top: 0.5rem;
-}
-
 .sns-link.facebook {
   color: #3f6f9b;
 }
@@ -128,6 +122,14 @@ export default Vue.extend({
 
 .sns-icon {
   font-size: 2rem;
-  margin-right: 0.5rem;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>
