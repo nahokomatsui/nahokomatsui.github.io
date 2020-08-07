@@ -23,6 +23,13 @@
           <fa class="sns-icon" :icon="['fab', 'facebook']" area-hidden="true" />
         </a>
         <a
+          class="sns-link github"
+          href="https://github.com/nahokomatsui"
+          target="_blank"
+        >
+          <fa class="sns-icon" :icon="['fab', 'github']" area-hidden="true" />
+        </a>
+        <a
           class="sns-link connpass"
           href="https://connpass.com/user/NahokoMatsui/"
           target="_blank"
@@ -114,6 +121,10 @@ export default Vue.extend({
 
 .sns-link.twitter {
   color: #36b0c0;
+}
+
+.sns-link.github {
+  color: #797176;
 }
 
 .sns-link.connpass {
