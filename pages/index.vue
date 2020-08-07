@@ -2,7 +2,7 @@
   <div class="container">
     <div class="content">
       <h1 class="title">
-        <img src="/logo.svg" alt="nahokomatsui" />
+        <img src="/logo.png" alt="nahokomatsui" />
       </h1>
       <p class="description">
         Web developer / kulala Inc.
