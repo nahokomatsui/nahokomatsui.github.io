@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container" :style="{ 'min-height': `${containerHeight}px` }">
     <div class="content">
       <h1 class="title">
         <img src="/logo.png" alt="nahokomatsui" width="280" height="73" />
@@ -40,13 +40,21 @@
 <script lang="ts">
 import Vue from 'vue'
 
-export default Vue.extend({})
+export default Vue.extend({
+  data() {
+    return {
+      containerHeight: 0,
+    }
+  },
+  mounted() {
+    this.containerHeight = window.innerHeight
+  },
+})
 </script>
 
 <style>
 .container {
   background-color: #f6f5f6;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
