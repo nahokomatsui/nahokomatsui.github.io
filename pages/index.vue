@@ -2,7 +2,7 @@
   <div class="container">
     <div class="content">
       <h1 class="title">
-        <img src="/logo.png" alt="nahokomatsui" />
+        <img src="/logo.png" alt="nahokomatsui" width="280" height="73" />
       </h1>
       <p class="description">
         Web developer / kulala Inc.
@@ -73,12 +73,7 @@ export default Vue.extend({})
 }
 
 .title {
-  max-width: 280px;
   margin: 0 auto;
-}
-
-.title > img {
-  width: 100%;
 }
 
 .description {
